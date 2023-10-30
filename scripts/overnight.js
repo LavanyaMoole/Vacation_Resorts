@@ -24,10 +24,23 @@ function getRoomRate(checkinDate, roomType) {
             const checkinDate = document.getElementById("checkinDate").value;
             const nights = parseInt(document.getElementById("nights").value);
             const roomType = document.querySelector('input[name="roomType"]:checked').value;
+            console.log(roomType)
             const adults = parseInt(document.getElementById("adults").value);
             const children = parseInt(document.getElementById("children").value);
             const discount = document.querySelector('input[name="discount"]:checked').value;
 
+         // Validate room type and number of guests
+    let messageDiv = document.getElementById("message");
+    messageDiv.innerText = "";
+
+    if (
+        (roomType === "Queen" && (adults + children) > 5) ||
+        (roomType === "King" && (adults + children) > 2) ||
+        (roomType === "2-Bedroom Suite" && (adults + children) > 6)
+    ) {
+        messageDiv.innerText = "The room you selected will not hold your party";
+        return; 
+    }
             const roomRate = getRoomRate(checkinDate, roomType);
 
             let discountPercent = 0;
@@ -43,6 +56,9 @@ function getRoomRate(checkinDate, roomType) {
             const taxAmount = 0.12 * discountedCost; // 12% tax
             const totalCost = discountedCost + taxAmount;
 
+            // Generate the confirmation number
+    const confirmationNumber = generateConfirmationNumber(name, checkinDate, nights, adults, children);
+
             // Display the price quote results
             const priceQuoteResult = document.getElementById("priceQuoteResult");
             document.getElementById("originalCost").innerText = originalCost.toFixed(2);
@@ -50,5 +66,25 @@ function getRoomRate(checkinDate, roomType) {
             document.getElementById("discountedCost").innerText = discountedCost.toFixed(2);
             document.getElementById("taxAmount").innerText = taxAmount.toFixed(2);
             document.getElementById("totalCost").innerText = totalCost.toFixed(2);
+             // Display the confirmation number
+    document.getElementById("confirmationNumber").textContent = confirmationNumber;
             priceQuoteResult.style.display = "block";
+
+            // Function to generate the confirmation number
+function generateConfirmationNumber(name, checkinDate, nights, adults, children) {
+    // Extract the first three characters of the name
+    const namePrefix = name.substring(0, 3).toUpperCase();
+
+    // Extract the month and year from the check-in date
+    //getUTCMonth returns months in 0-based index, we added 1 for human understanding purpose
+    const checkinMonth = new Date(checkinDate).getUTCMonth() + 1; 
+    const checkinYear = new Date(checkinDate).getUTCFullYear();
+
+    // Format the month and year as MMYYYY
+    // if checkinMonth is 5, it would become '05' thats why we have used padStart function
+    const checkinDatePrefix = `${checkinMonth.toString().padStart(2, '0')}${checkinYear}`;
+
+    // Create the confirmation number
+    return `${namePrefix}-${checkinDatePrefix}-${nights}:${adults}:${children}`;
+}
         }
