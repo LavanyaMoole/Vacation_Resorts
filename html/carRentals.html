@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME car rental</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- MDB -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+    rel="stylesheet"
+  />
+  <!-- cCSS for additional styling -->
+  <link rel="stylesheet" href="../css/homepage.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="../scripts/carRentals.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../htmlpages/homepage.html">Vacation.com</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-dark" type="submit">Search</button>
+              </form>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href="../html/overnightstay.html"
+                    target="_blank"
+                    >Hotels</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    aria-current="page"
+                    href=""
+                    target="_blank"
+                    >Attractions&Tours</a
+                  >
+                </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="../htmlpages/productspage.html"
+                  target="_blank"
+                  >Fun Activities</a
+                >
+              </li>
+              <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="../htmlpages/productspage.html"
+                    target="_blank"
+                    >Restaurants & Dining</a
+                  >
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Car Rentals
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="../html/carrentals.html"
+                      target="_blank"
+                      >car rentals</a
+                    >
+                  </li>
+  
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li><a class="dropdown-item" href="#">Airport transfers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../htmlpages/loginpage.html"
+                  target="_blank"
+                  >Login</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../htmlpages/registrationpage.html"
+                  target="_blank"
+                  >Signup</a
+                >
+              </li>
+  
+              <li>
+                
+              <li>
+                <div class="fav">
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                </div>
+              </li>
+              <li>
+                <div class="user-icon">
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <br>
+      <br>
+    <h1 class="mt-3">ACME Car Rentals</h1>
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">PickUp date</label>
+        <input type="date" class="form-control" id="pickUpdate" placeholder="PickUp date">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Number of Days</label>
+        <input type="text" class="form-control" id="numberofdays" placeholder="Number of Days">
+      </div>
+
+      <p>Options</p>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="electronicTollTag">
+        <label class="form-check-label" for="flexCheckDefault">
+          Electronic Toll Tag($3.95/day)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="GPS">
+        <label class="form-check-label" for="flexCheckChecked">
+         GPS ($2.95/day)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="roadsideAssistance">
+        <label class="form-check-label" for="flexCheckDefault">
+         Roadside Assistance ($2.95/day)
+        </label>
+      </div>
+      <p>Under 25</p>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no" value="option1">
+        <label class="form-check-label" for="inlineRadio1">No</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="yes" value="option2">
+        <label class="form-check-label" for="inlineRadio2">Yes</label>
+      </div>
+      <br>
+      <button type="button" class="btn btn-success" id="estimateButton">Estimate Total Cost</button>
+
+      <br>
+      <h6 class="text-center">Estimation cost</h6>
+      <br>
+      <table class="table" style="display: none;" id="table">
+        
+        <tbody >
+          <tr id="carRental">
+           
+            <td id="carRentalDisplay">car rental:</td>
+            <td ><span id="carRentalPrice">xxx.xx</span></td>
+           
+          </tr>
+          <tr id="options">
+            
+            <td id="optionsDisplay">options:</td>
+            <td id="optionsPrice">xxx.xx</td>
+            
+          </tr>
+          <tr id="under25">
+            
+            <td id="under25Display">under 25:</td>
+            <td id="under25Price">xxx.xx</td>
+            
+          </tr>
+          <tr id="rentalTotal">
+            
+            <td  id="rentalTotalDisplay">Total Due:</td>
+            <td id="rentalTotalPrice">xxx.xx</td>
+          </tr>
+        </tbody>
+      </table>
+   
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
