@@ -10,10 +10,33 @@ function getRoomRate(checkinDate, roomType) {
     // the room rate based on the check-in date
     if (checkinMonth >= 5 && checkinMonth <= 7) {
         // June (5), July (6), and August (7) have the higher rate
-        return 250;
+        
+
+        if(roomType==="Queen"){
+
+            return 250;
+        }
+       else if(roomType==="King"){
+
+            return 250;
+        }
+        else{
+            return 350;
+        }
     } else {
         // Other months have the lower rate
-        return 150;
+        
+        if(roomType==="Queen"){
+
+            return 150;
+        }
+       else if(roomType==="King"){
+
+            return 150;
+        }
+        else{
+            return 210;
+        }
     }
 }
 
